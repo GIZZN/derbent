@@ -1,0 +1,32 @@
+/* PersonalInfoSection стили */
+
+@import '../../../styles/variables.module.css';
+@import '../../../styles/shared.module.css';
+
+.personalInfoSection {
+  composes: section from '../../../styles/shared.module.css';
+}
+
+.sectionHeader {
+  composes: sectionHeader from '../../../styles/shared.module.css';
+}
+
+.sectionTitle {
+  composes: sectionTitle from '../../../styles/shared.module.css';
+}
+
+.formGrid {
+  composes: formGrid from '../../../styles/shared.module.css';
+}
+
+.inputGroup {
+  composes: inputGroup from '../../../styles/shared.module.css';
+}
+
+.input {
+  composes: input from '../../../styles/shared.module.css';
+}
+
+.textarea {
+  composes: textarea from '../../../styles/shared.module.css';
+}

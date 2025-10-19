@@ -1,0 +1,59 @@
+/* EducationSection стили */
+
+@import '../../../styles/variables.module.css';
+@import '../../../styles/shared.module.css';
+
+.educationSection {
+  composes: section from '../../../styles/shared.module.css';
+}
+
+.sectionHeader {
+  composes: sectionHeader from '../../../styles/shared.module.css';
+}
+
+.sectionTitle {
+  composes: sectionTitle from '../../../styles/shared.module.css';
+}
+
+.addButton {
+  composes: button buttonSmall buttonSecondary from '../../../styles/shared.module.css';
+}
+
+.educationItem {
+  composes: card from '../../../styles/shared.module.css';
+}
+
+.formGrid {
+  composes: formGrid from '../../../styles/shared.module.css';
+}
+
+.inputGroup {
+  composes: inputGroup from '../../../styles/shared.module.css';
+}
+
+.input {
+  composes: input from '../../../styles/shared.module.css';
+}
+
+.removeButton {
+  composes: removeButton from '../../../styles/shared.module.css';
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--resume-gap-sm);
+  margin-top: var(--resume-gap-sm);
+}
+
+.checkbox input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.checkbox label {
+  color: var(--resume-text-muted);
+  font-size: var(--resume-font-sm);
+  margin: 0;
+  cursor: pointer;
+}

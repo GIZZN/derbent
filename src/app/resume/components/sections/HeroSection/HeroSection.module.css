@@ -1,0 +1,126 @@
+/* HeroSection стили */
+
+.hero {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 2.5rem 0 2rem;
+}
+
+.heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111;
+  line-height: 1.2;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadButton,
+.previewButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 22px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+  height: 44px;
+  box-sizing: border-box;
+}
+
+.loadButton {
+  background: #fff;
+  color: #111;
+}
+
+.loadButton:hover {
+  background: #f8f8f8;
+  border-color: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+.previewButton {
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  color: #fff;
+}
+
+.previewButton:hover {
+  background: linear-gradient(135deg, #ba0500, #e10600);
+  transform: translateY(-1px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 0 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 1.875rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .heroSubtitle {
+    margin-bottom: 1.5rem;
+  }
+  
+  .loadButton,
+  .previewButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+}

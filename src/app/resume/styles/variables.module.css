@@ -1,0 +1,76 @@
+/* CSS переменные для резюме */
+
+:root {
+  /* Цвета */
+  --resume-bg-primary: #000;
+  --resume-bg-secondary: rgba(255, 255, 255, 0.02);
+  --resume-bg-tertiary: rgba(255, 255, 255, 0.04);
+  
+  --resume-border-primary: #333;
+  --resume-border-secondary: #444;
+  --resume-border-accent: #00ff00;
+  
+  --resume-text-primary: #fff;
+  --resume-text-secondary: rgba(255, 255, 255, 0.7);
+  --resume-text-tertiary: rgba(255, 255, 255, 0.6);
+  --resume-text-placeholder: #666;
+  --resume-text-muted: #888;
+  
+  --resume-button-bg: rgba(255, 255, 255, 0.03);
+  --resume-button-hover: rgba(255, 255, 255, 0.1);
+  --resume-button-border: rgba(255, 255, 255, 0.1);
+  --resume-button-border-hover: rgba(255, 255, 255, 0.2);
+  
+  /* Размеры */
+  --resume-padding-xs: 0.25rem;
+  --resume-padding-sm: 0.5rem;
+  --resume-padding-md: 0.75rem;
+  --resume-padding-lg: 1rem;
+  --resume-padding-xl: 1.5rem;
+  --resume-padding-2xl: 2rem;
+  --resume-padding-3xl: 2.5rem;
+  --resume-padding-4xl: 3rem;
+  --resume-padding-5xl: 4rem;
+  
+  --resume-gap-xs: 0.25rem;
+  --resume-gap-sm: 0.5rem;
+  --resume-gap-md: 0.75rem;
+  --resume-gap-lg: 1rem;
+  --resume-gap-xl: 1.5rem;
+  --resume-gap-2xl: 2rem;
+  --resume-gap-3xl: 3rem;
+  
+  /* Радиусы */
+  --resume-radius-sm: 4px;
+  --resume-radius-md: 8px;
+  --resume-radius-lg: 12px;
+  --resume-radius-xl: 20px;
+  --resume-radius-full: 50%;
+  
+  /* Шрифты */
+  --resume-font-xs: 0.7rem;
+  --resume-font-sm: 0.8rem;
+  --resume-font-base: 0.875rem;
+  --resume-font-md: 0.9rem;
+  --resume-font-lg: 1rem;
+  --resume-font-xl: 1.25rem;
+  --resume-font-2xl: 1.5rem;
+  --resume-font-3xl: 2rem;
+  --resume-font-4xl: 2.5rem;
+  
+  /* Переходы */
+  --resume-transition-fast: all 0.15s ease;
+  --resume-transition-base: all 0.2s ease;
+  --resume-transition-slow: all 0.3s ease;
+  --resume-transition-border: border-color 0.2s ease;
+  
+  /* Тени */
+  --resume-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --resume-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --resume-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  
+  /* Z-индексы */
+  --resume-z-dropdown: 100;
+  --resume-z-modal: 1000;
+  --resume-z-tooltip: 1100;
+}

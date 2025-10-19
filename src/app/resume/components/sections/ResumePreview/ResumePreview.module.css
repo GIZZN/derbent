@@ -1,0 +1,137 @@
+.previewPanel {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.previewContent {
+  padding: 1.5rem;
+}
+
+.previewContent h3 {
+  color: #111;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.resumePreview {
+  color: #111;
+  font-size: 0.85rem;
+}
+
+.previewHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.previewHeader h1 {
+  color: #111;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.previewHeader h2 {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.previewContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.previewContacts span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.previewSection {
+  margin-bottom: 1.5rem;
+}
+
+.previewSection h3 {
+  color: #111;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: none;
+}
+
+.previewSection p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.previewItem {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.previewItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.previewItem h4 {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.previewDates {
+  color: #666;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.previewSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.previewSkill {
+  padding: 0.25rem 0.75rem;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: #888;
+  font-size: 0.75rem;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .previewPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .previewContent {
+    padding: 1rem;
+  }
+  
+  .previewHeader h1 {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,519 @@
+/* Контейнер для анализа резюме */
+.analysisContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.analysisModal {
+  background: white;
+  border-radius: 16px;
+  padding: 0;
+  max-width: 1000px;
+  width: 95%;
+  max-height: 95vh;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.analysisHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.analysisTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.analysisContent {
+  padding: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнер для текста резюме */
+.resumeTextContainer {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.resumeTextTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resumeTextContent {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4a5568;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Эффект переливания для самого текста */
+.resumeTextContent.analyzing {
+  background: linear-gradient(
+    90deg,
+    #4a5568 0%,
+    #667eea 25%,
+    #764ba2 50%,
+    #667eea 75%,
+    #4a5568 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientShimmer 2s infinite;
+}
+
+/* Fallback для браузеров без поддержки background-clip: text */
+@supports not (background-clip: text) {
+  .resumeTextContent.analyzing {
+    background: none;
+    color: #667eea;
+    animation: textColorShimmer 2s infinite;
+  }
+}
+
+@keyframes textGradientShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes textColorShimmer {
+  0%, 100% {
+    color: #4a5568;
+  }
+  50% {
+    color: #667eea;
+  }
+}
+
+/* Анимация загрузки */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* Анимация переливания */
+.shimmerContainer {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.shimmerBar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102, 126, 234, 0.4),
+    rgba(118, 75, 162, 0.6),
+    rgba(102, 126, 234, 0.4),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Дополнительная анимация точек */
+.dotsContainer {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  animation: dotPulse 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Результаты анализа */
+.analysisResults {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analysisSection {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionContent {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #667eea;
+}
+
+.suggestionsList,
+.improvementsList,
+.strengthsList,
+.weaknessesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestionsList li,
+.improvementsList li,
+.strengthsList li,
+.weaknessesList li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  padding-left: 24px;
+}
+
+.suggestionsList li:last-child,
+.improvementsList li:last-child,
+.strengthsList li:last-child,
+.weaknessesList li:last-child {
+  border-bottom: none;
+}
+
+.suggestionsList li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.improvementsList li::before {
+  content: "🔧";
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.strengthsList li::before {
+  content: "✅";
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.weaknessesList li::before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+.analysisText {
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.processingTime {
+  text-align: center;
+  color: #718096;
+  font-size: 0.9rem;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Кнопки действий */
+.analysisActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.actionButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.secondaryButton {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.secondaryButton:hover {
+  background: #edf2f7;
+  transform: translateY(-1px);
+}
+
+/* Общая оценка */
+.scoreBar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.scoreFill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Ключевые слова */
+.keywordsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keywordTag {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Структурные советы */
+.structureAdviceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.structureAdviceList li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  padding-left: 24px;
+}
+
+.structureAdviceList li:last-child {
+  border-bottom: none;
+}
+
+.structureAdviceList li::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+/* Приоритетные действия */
+.priorityActionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.priorityAction {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.priorityAction:last-child {
+  border-bottom: none;
+}
+
+.priorityNumber {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .analysisModal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .analysisHeader {
+    padding: 20px;
+  }
+  
+  .analysisContent {
+    padding: 20px;
+  }
+  
+  .analysisTitle {
+    font-size: 1.3rem;
+  }
+  
+  .keywordsList {
+    gap: 6px;
+  }
+  
+  .keywordTag {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}

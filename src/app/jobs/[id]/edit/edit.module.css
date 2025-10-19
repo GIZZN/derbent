@@ -1,0 +1,945 @@
+/* Container and Layout */
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+  padding-bottom: 2rem;
+}
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(225, 6, 0, 0.2) 0%, rgba(225, 6, 0, 0.12) 25%, rgba(225, 6, 0, 0.06) 50%, transparent 75%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  margin: 0 auto 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  padding-left: 2rem;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.backButton:hover {
+  color: #e10600;
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #111;
+  margin: 0 0 0.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 3;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  position: relative;
+  z-index: 3;
+}
+
+/* Form Styles */
+.form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 0;
+}
+
+.formSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.formGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+.input {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:focus {
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.inputError {
+  border-color: #dc3545;
+}
+
+.inputError:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.textarea {
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+  transition: all 0.2s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.textarea::placeholder {
+  color: #999;
+}
+
+.textarea:focus {
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.charCount {
+  font-size: 0.75rem;
+  color: #999;
+  text-align: right;
+  margin-top: -0.25rem;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Custom Select Styles */
+.customSelect {
+  position: relative;
+  width: 100%;
+}
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  color: #111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.selectButton:hover {
+  border-color: #e10600;
+}
+
+.selectButton:focus {
+  outline: none;
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.selectButtonPlaceholder {
+  color: #999;
+}
+
+.selectIcon {
+  color: #666;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.selectIconOpen {
+  transform: rotate(180deg);
+}
+
+.selectDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: dropdownSlide 0.2s ease-out;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selectOption {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  border: none;
+  color: #111;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.selectOption:hover {
+  background: #fff5f5;
+}
+
+.selectOptionActive {
+  background: #ffecec;
+  color: #e10600;
+}
+
+.selectOptionActive:hover {
+  background: #ffecec;
+}
+
+/* Skill Select */
+.skillSelect {
+  position: relative;
+  width: 100%;
+}
+
+.skillContainer {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.skillContainer:focus-within {
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.selectedSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  min-height: 3rem;
+  align-items: center;
+}
+
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: #fff5f5;
+  color: #e10600;
+  border: 1px solid #ffd5d5;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.skillRemove {
+  background: none;
+  border: none;
+  color: #e10600;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.15s ease;
+}
+
+.skillRemove:hover {
+  background: #e10600;
+  color: white;
+}
+
+.skillDropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0 0 8px 8px;
+  background: #f9f9f9;
+  font-size: 0.875rem;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.skillDropdownButton:hover {
+  background: #f0f0f0;
+}
+
+.skillDropdownIcon {
+  color: #666;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.skillDropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.skillDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: dropdownSlide 0.2s ease-out;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skillSearch {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f9f9f9;
+}
+
+.skillSearchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: #fff;
+  color: #111;
+  outline: none;
+}
+
+.skillSearchInput:focus {
+  border-color: #e10600;
+  box-shadow: 0 0 0 2px rgba(225, 6, 0, 0.1);
+}
+
+.skillList {
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.skillOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #111;
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  gap: 0.75rem;
+}
+
+.skillOption:hover {
+  background: #fff5f5;
+}
+
+.skillInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 1;
+}
+
+.skillName {
+  font-weight: 500;
+  color: #111;
+}
+
+.skillCategory {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.noSkillsContainer {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.noSkills {
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.createSkillButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #fff5f5;
+  color: #e10600;
+  border: 1px solid #ffd5d5;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.createSkillButton:hover {
+  background: #ffecec;
+  border-color: #ffb3b3;
+}
+
+.skillsLoading {
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.skillHint {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #e10600;
+}
+
+/* Skill Modal Styles */
+.skillModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.skillModalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.skillModalContent {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.skillModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.skillModalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.skillModalClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skillModalClose:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.skillModalBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skillModalGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillModalLabel {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+.skillModalInput,
+.skillModalSelect,
+.skillModalTextarea {
+  padding: 0.875rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.skillModalInput:focus,
+.skillModalSelect:focus,
+.skillModalTextarea:focus {
+  border-color: #e10600;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.1);
+}
+
+.skillModalTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.skillModalActions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid #eaeaea;
+  justify-content: flex-end;
+}
+
+.skillModalCancelButton,
+.skillModalCreateButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 100px;
+}
+
+.skillModalCancelButton {
+  background: transparent;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.skillModalCancelButton:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.skillModalCreateButton {
+  background: #e10600;
+  color: white;
+  border: none;
+}
+
+.skillModalCreateButton:hover:not(:disabled) {
+  background: #ba0500;
+  transform: translateY(-1px);
+}
+
+.skillModalCreateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile responsive for modal */
+@media (max-width: 640px) {
+  .skillModal {
+    padding: 0.5rem;
+  }
+  
+  .skillModalContent {
+    max-width: 100%;
+  }
+  
+  .skillModalActions {
+    flex-direction: column;
+  }
+  
+  .skillModalCancelButton,
+  .skillModalCreateButton {
+    width: 100%;
+  }
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 2rem;
+}
+
+.cancelButton {
+  padding: 0.875rem 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+  border-color: #666;
+  color: #333;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ba0500, #e10600);
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Alert */
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fff5f5;
+  border: 1px solid #ffc9c9;
+  border-radius: 8px;
+  color: #dc3545;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #666;
+  text-align: center;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #f0f0f0;
+  border-top: 3px solid #e10600;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.error svg {
+  color: #e10600;
+  margin-bottom: 1rem;
+}
+
+.error h3 {
+  font-size: 1.25rem;
+  color: #111;
+  margin: 0 0 0.5rem;
+}
+
+.error p {
+  margin: 0 0 2rem;
+  color: #666;
+}
+
+.retryButton {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retryButton:hover {
+  background: linear-gradient(135deg, #ba0500, #e10600);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .formGroup:has(.textarea) {
+    grid-column: span 2;
+  }
+  
+  .formActions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .header::before {
+    width: 450px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(225, 6, 0, 0.15) 0%, rgba(225, 6, 0, 0.1) 25%, rgba(225, 6, 0, 0.05) 50%, transparent 75%);
+  }
+  
+  .container {
+    padding-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .form {
+    padding: 2rem 1rem 0;
+  }
+  
+  .headerContent {
+    padding: 0 1rem;
+  }
+  
+  .backButton {
+    padding-left: 1rem;
+  }
+  
+  .formActions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header::before {
+    width: 320px;
+    height: 220px;
+    background: radial-gradient(ellipse, rgba(225, 6, 0, 0.12) 0%, rgba(225, 6, 0, 0.08) 25%, rgba(225, 6, 0, 0.04) 50%, transparent 75%);
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+  }
+  
+  .form {
+    padding: 1.5rem 1rem 0;
+  }
+}

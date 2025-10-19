@@ -1,0 +1,624 @@
+.container {
+  min-height: 100vh;
+  background: #f8f9fa;
+  margin-left: 60px;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 3rem 0 2rem;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.backTab {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(180deg, #e10600 0%, #ba0500 100%);
+  border: none;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.backTab:hover {
+  width: 80px;
+  background: linear-gradient(180deg, #ba0500 0%, #e10600 100%);
+  box-shadow: 4px 0 25px rgba(225, 6, 0, 0.25);
+}
+
+.backTab:active {
+  width: 70px;
+  box-shadow: 2px 0 15px rgba(225, 6, 0, 0.3);
+}
+
+.backTab svg {
+  transition: all 0.2s ease;
+}
+
+.backTab:hover svg {
+  transform: scale(1.1);
+}
+
+.backTab:focus {
+  outline: none;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(225, 6, 0, 0.3);
+}
+
+.backTab:focus:hover {
+  box-shadow: 4px 0 25px rgba(225, 6, 0, 0.25), 0 0 0 3px rgba(225, 6, 0, 0.3);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.jobMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.jobMetaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.875rem;
+  background: #f8f9fa;
+  padding: 0.5rem 0.75rem;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+}
+
+.jobMetaItem svg {
+  color: #e10600;
+  width: 16px;
+  height: 16px;
+}
+
+.remote {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.jobCard {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.jobCard:hover {
+  border-color: #ffc9c9;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.jobHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.jobTitle h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1rem 0;
+}
+
+.jobBadges {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.statusBadge, .moderationBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.jobDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.detailItem svg {
+  color: #e10600;
+}
+
+.jobDescription, .jobSection {
+  margin-bottom: 2rem;
+}
+
+.jobDescription h3, .jobSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1rem 0;
+}
+
+.jobDescription p, .jobSection p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Skills */
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: #fff5f5;
+  border-radius: 16px;
+  border: 1px solid #ffd5d5;
+}
+
+.skillName {
+  font-weight: 500;
+  color: #e10600;
+  font-size: 0.875rem;
+}
+
+.skillCategory {
+  font-size: 0.75rem;
+  color: #ba0500;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hrCard, .applicationsCard, .applyCard {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hrCard:hover, .applicationsCard:hover, .applyCard:hover {
+  border-color: #ffc9c9;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.hrCard h3, .applicationsCard h3, .applyCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1rem 0;
+  flex-shrink: 0; /* Не сжимается */
+}
+
+.hrInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1; /* Занимает оставшееся место */
+  overflow: hidden;
+}
+
+.hrName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.hrCompany {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.hrContact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.hrContact svg {
+  color: #e10600;
+}
+
+/* Applications */
+.applicationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1; /* Занимает оставшееся место */
+  overflow-y: auto; /* Прокрутка при необходимости */
+  max-height: 120px; /* Ограничиваем высоту */
+}
+
+.applicationItem {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #e10600;
+}
+
+.applicationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.candidateName {
+  font-weight: 600;
+  color: #111;
+}
+
+.applicationStatus {
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.applicationDate {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Apply Button */
+.applyButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #e10600, #ba0500);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  margin-top: auto;
+  box-shadow: 0 2px 8px rgba(225, 6, 0, 0.2);
+}
+
+.applyButton:hover {
+  background: linear-gradient(135deg, #ba0500, #e10600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.3);
+}
+
+/* Application status button styles */
+.pendingButton {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  cursor: not-allowed !important;
+  opacity: 0.8;
+}
+
+.pendingButton:hover {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.acceptedButton {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  cursor: not-allowed !important;
+  opacity: 0.8;
+}
+
+.acceptedButton:hover {
+  background: #10b981 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.rejectedButton {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  cursor: pointer !important;
+}
+
+.rejectedButton:hover {
+  background: #dc2626 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2) !important;
+}
+
+.interviewButton {
+  background: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
+  cursor: not-allowed !important;
+}
+
+.interviewButton:hover {
+  background: #8b5cf6 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.hiredButton {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  cursor: not-allowed !important;
+}
+
+.hiredButton:hover {
+  background: #059669 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.appliedButton {
+  background: #6b7280 !important;
+  border-color: #6b7280 !important;
+  cursor: not-allowed !important;
+}
+
+.appliedButton:hover {
+  background: #6b7280 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Application info styles */
+.applicationInfo {
+  margin-top: 0.5rem;
+}
+
+.reapplyNote {
+  color: #f59e0b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.applyNote {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  margin: 0;
+  flex-shrink: 0; /* Не сжимается */
+}
+
+/* Loading and Error States */
+.loading, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  gap: 1rem;
+  color: #555;
+}
+
+.loadingIcon {
+  color: #e10600;
+  animation: pulse 2s infinite;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.error h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.5rem 0;
+}
+
+.error p {
+  margin: 0 0 1.5rem 0;
+}
+
+.errorBackButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff5f5;
+  border: 1px solid #ffd5d5;
+  border-radius: 20px;
+  color: #e10600;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.errorBackButton:hover {
+  background: #ffecec;
+  color: #ba0500;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(225, 6, 0, 0.15);
+  border-color: #ffc9c9;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 50px;
+  }
+  
+  .backTab {
+    width: 50px;
+  }
+  
+  .backTab:hover {
+    width: 65px;
+  }
+  
+  .backTab svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .header {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .headerContent {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .jobMeta {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .jobMetaItem {
+    font-size: 0.8rem;
+  }
+  
+  .jobDetails {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .jobCard {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin-left: 45px;
+  }
+  
+  .backTab {
+    width: 45px;
+  }
+  
+  .backTab:hover {
+    width: 60px;
+  }
+  
+  .backTab svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .jobMeta {
+    gap: 0.5rem;
+  }
+  
+  .jobMetaItem {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.5rem;
+  }
+  
+  .jobCard {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  .hrCard, .applicationsCard, .applyCard {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+}
